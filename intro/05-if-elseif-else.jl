@@ -16,5 +16,9 @@ x < y && "x is less than y"
 x < y || "x is not less than y"
 x < y ? "x is less than y" : "x is not less than y"
 
+# Exercises
+## 1. Test if a number is a multiple of 3, 5 or 7
+
+## 2. Print which quadrant in the Cartesian plane a point is located
 
 # More info at https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation
