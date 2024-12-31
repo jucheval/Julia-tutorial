@@ -1,9 +1,9 @@
-# functions Exercises
+# Exercises
 
-# Make a function `round_number` that rounds a number x as input.
-# It should have two methods:
-# 1. Float64 should use the `round` function
-# 2. Int64 should just return the input (noop)
+# 1. Make a function `round_number` that rounds a number x as input.
+## It should have two methods:
+## a. Float64 should use the `round` function
+## b. Int64 should just return the input
 
 function round_number(x::Float64)
     return round(x)
@@ -13,7 +13,7 @@ function round_number(x::Int64)
     return x
 end
 
-# Write a function to multiply all the numbers in a vector
+# 2. Write a function to multiply all the numbers in a vector
 
 function multiply_list(v)
     acc = 1
