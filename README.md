@@ -37,3 +37,7 @@ To configure a local environment with VSCode and GitHub (assuming that you have 
 This content is licensed under [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/).
 
 [![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+### Acknowledgments
+
+I would like to warmly thank [Rémy Drouilhet](https://github.com/rcqls) for his constant will to teach and share informations and discussions about Julia.
