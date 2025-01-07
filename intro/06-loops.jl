@@ -38,7 +38,7 @@ for tube in 1:2
     end
 end
 
-# while-loops
+# While loops
 i = 1
 while i < 5
     println(i)
