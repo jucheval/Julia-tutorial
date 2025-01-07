@@ -8,10 +8,10 @@
 - Search the command "Julia: Restart REPL", the shortcut is displayed and should be `Alt+j Alt+r`
 - It opens a Julia REPL on the bottom panel. This panel can also contain a standard terminal
 - REPL has four modes :
-  - Julia
-  - ] : packages
-  - ? : help
-  - ; : shell
+  - default : Julia
+  - `]` : packages
+  - `?` : help
+  - `;` : shell
 - Hit `Backspace` to return to Julia
 
 ### Shortcuts ([More info](https://code.visualstudio.com/docs/getstarted/keybindings))
