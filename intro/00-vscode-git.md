@@ -34,9 +34,9 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
 
 ### Standard workflow (in VS Code)
 
-1. Modify your files. Each modified file appears in the Source Control panel.
+1. Modify your files: each modified file appears in the Source Control panel.
 2. Go to the Source Control panel.
-    1. Stage the changes you want to commit (`+` button on the right of the file name).
+    1. Stage the changes you want to commit: `+` button on the right of the file name (`click` on the filename to open a diff panel).
     2. Type a message in the upper text box which explains your changes. Select the `Commit` button.
     3. Select the `Sync Changes` button to update your local repository with the remote one.
 
