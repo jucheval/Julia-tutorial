@@ -16,21 +16,9 @@ To configure a local environment with VSCode and GitHub (assuming that you have 
 
 ## Contents
 
-- Introduction
-    1. Using Packages
-    2. Variables and Data Structures
-    3. Boolean operators and numeric comparisons
-    4. Types: concrete and abstract
-    5. `if`-`elseif`-`else` statements
-    6. `for` loops
-    7. `while` loops
-    8. Functions
-    9. User-defined custom structures: `struct`
-- Some packages
-    - Distributions.jl
-    - and so on...
-- Develop your own package
-    1. TO DO...
+- [Introduction](intro/README.md)
+- [Some packages](packages/README.md)
+- [Develop your own package](development/README.md)
 
 ## License
 
