@@ -1,16 +1,18 @@
 # VS Code
 
-# Command Palette (cmd+maj+P or ctrl+maj+P)
-    # search command "Julia: Restart REPL" (read–eval–print loop), the shortcut is displayed and should be alt+j alt+r
-    # It opens a Julia REPL on the bottom panel. This panel can also contain a standard terminal
-    # REPL has four modes :
-    # Julia
-    # ] : packages
-    # ? : help
-    # ; : shell
-    # backspace to return to Julia
+## Julia REPL (read–eval–print loop)
 
-# Shortcuts
+- Open the Command Palette (`Cmd+Maj+P` or `Ctrl+Maj+P`) 
+- Search the command "Julia: Restart REPL", the shortcut is displayed and should be `Alt+j Alt+r`
+- It opens a Julia REPL on the bottom panel. This panel can also contain a standard terminal
+- REPL has four modes :
+    - Julia
+    - ] : packages
+    - ? : help
+    - ; : shell
+- Hit `Backspace` to return to Julia
+
+## Shortcuts
 ## option+click : get multiple cursors
 ## cmd+click : follow links
 ## alt+cmd+arrows : navigate between tabs
