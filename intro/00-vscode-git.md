@@ -4,7 +4,7 @@
 
 ### Julia REPL (read–eval–print loop)
 
-- Open the Command Palette (`Cmd+Maj+P` on macOs or `Ctrl+Maj+P` on Windows, shortcuts below correspond to macOs) 
+- Open the Command Palette (`Cmd+Maj+P` on macOs or `Ctrl+Maj+P` on Windows, shortcuts below correspond to macOs)
 - Search the command "Julia: Restart REPL", the shortcut is displayed and should be `Alt+j Alt+r`
 - It opens a Julia REPL on the bottom panel. This panel can also contain a standard terminal
 - REPL has four modes :
