@@ -8,9 +8,6 @@ function_name()
 short_function() = "short function output"
 short_function()
 
-# Anonymous functions
-(x -> 2*x)(2)
-
 # Positional arguments versus keyword arguments
 function myprint(x, y)
     println("x = "*string(x)*" and y = "*string(y))
@@ -44,15 +41,16 @@ myfunction(Float32(3.1))
 myfunction("3")
 
 # How to search for methods ?
+## methods of a function
 methods(myfunction)
-using DrWatson
-methodswith(String, DrWatson; supertypes = true)    # one example where the output list is not too long
+## methods with a Type
+methodswith(Irrational)
 
 # Multiple dispatch
-myfunction(x::Int, y::Float64) = "Int prevails"
-myfunction(x::Int, y::Int) = "Int prevails and it's a match !"
-myfunction(x::Float64, y::Int) = "Float64 prevails"
-myfunction(x::Float64, y::Float64) = "Float64 prevails and it's a match"
+myfunction(x::Int, y::Float64) = "Int first"
+myfunction(x::Int, y::Int) = "Int first and it's a match !"
+myfunction(x::Float64, y::Int) = "Float64 first"
+myfunction(x::Float64, y::Float64) = "Float64 first and it's a match"
 myfunction(1, 2.)
 myfunction(1, 2)
 myfunction(1., 2)
@@ -64,14 +62,17 @@ myfunction(1., 2.)
 # map (broadcasting)/reduce/mapreduce
 ## map and broadcasting (.) are used to broadcast functions of type T to Vectors{T}
 ## In other words, Julia executes a for loop without explicitly writing it
-## note that Any[..] is an artifact of myfunction: 
-## it is needed otherwise the Int's are converted into Float's
+## Julia performance tips recommend map over the dot syntax
 map(myfunction, Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
-myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])   # Julia performance tips recommend map over the dot syntax
+myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
+## note that Any[..] above is an artifact of the example 
+## it is needed otherwise the Int's are converted into Float's and all the outputs are the same
+
 ## filter extracts the values matching a certain condition
 filter(x -> x <= 3, 1:10)
 ## reduce applies a binary operator iteratively
 reduce(+, 1:10)     # sum of the first 10 integers
+## mapreduce(f, op, v) is an alias for reduce(op, map(f, v))
 mapreduce(x -> x^2, +, 1:10)    # sum of the first 10 squares
 
 # ! convention
