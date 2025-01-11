@@ -14,13 +14,19 @@
   - `;` : shell
 - Hit `Backspace` to return to Julia
 
+I advise you to activate option `Execution: Code In REPL` in VS Code settings (bottom left button -> `Settings`, or `Cmd+,`)
+
 ### Shortcuts ([More info](https://code.visualstudio.com/docs/getstarted/keybindings))
 
-- `Option+click` : get multiple cursors
-- `Cmd+click` : follow links
-- `Alt+Cmd+←/→` : navigate between tabs
-- `Alt+↑/↓` : move lines up or down
-- `Maj+Alt+↑/↓` : copy lines up or down
+- General
+  - `Option+click`: get multiple cursors
+  - `Cmd+click`: follow links
+  - `Alt+Cmd+←/→`: navigate between tabs
+  - `Alt+↑/↓`: move lines up or down
+  - `Maj+Alt+↑/↓`: copy lines up or down
+- Julia specific
+  - `Maj+Enter`: execute code in REPL
+  - `Alt+j Alt+r`: restart REPL
 
 ### Code completion (IntelliSense, [more info](https://code.visualstudio.com/docs/editor/intellisense))
 
