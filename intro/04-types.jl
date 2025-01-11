@@ -11,7 +11,7 @@ subtypes(Integer)
 # Comparisons
 Bool <: Integer
 1 isa Integer
-isa(1,Number)
+isa(1,Number)       # all operators can be written as regular functions
 
 # AbstractFloat vs Float64, Float32
 x = 1.
@@ -34,8 +34,16 @@ x_vec == [1;2;3;4]
 x_vec != [1 2 3 4]
 
 # It's all Array{Type, N}
-## There is also an AbstractArray type. It contains types that behave like arrays but are not the basic type Array
-subtypes(AbstractArray)
+Vector
+Matrix
+
+# Ways to construct Arrays
+[i^2 for i in 1:10]
+ones(4)
+zeros(2,3)
+fill("a", (2,2,2))
+rand(2,3)
+reshape([1,2,3,4], (2,2))
 
 # All values in an Array must have the same type
 [1, 2]
@@ -51,13 +59,16 @@ subtypes(AbstractArray)
 # Tuple and NamedTuple
 ## variables of different types usually are stored in Tuples
 tuple = ("a", true)
-tuple[1]    # accessed like Vectors, but they are not mutable
+tuple[1]    # accessed like Vectors
+## but they are not mutable
+tuple[1] = "b"
 typeof(tuple)   # Each type is specified
+## some functions return a Tuple
 (nrow, ncol) = size(x_mat)
-# or
+## or
 nrow, ncol = size(x_mat)
 nrow
-## there is also NamedTuples, very neat to define parameters
+## there is also NamedTuples, very neat to define parameters (see DrWatson package)
 namedtuple = (a = 1, b = 3)
 
 
