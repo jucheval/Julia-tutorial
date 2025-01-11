@@ -1,8 +1,13 @@
 # Packages
 
+# Packages names convention
+## starts with an uppercase letter
+## usually is quite precise and expressive (avoids abbreviations)
+
 # Adding packages
 ## with the package mode ] -> add PackageName
-## some useful packages
+## or with the package Pkg (see below)
+### some useful packages
 using Pkg
 Pkg.add(["OhMyREPL",            # Highlights your REPL
          "Revise",              # Awesome for Package development
