@@ -20,6 +20,7 @@ end
 for n ∈ 0:1_000:10_000 # \in + tab
     println(n)
 end
+## enumerate
 for (id, value) in enumerate(["a", "b", "c"])
     println( (id, value) )
 end
