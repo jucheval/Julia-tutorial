@@ -61,10 +61,4 @@ nrow
 namedtuple = (a = 1, b = 3)
 
 
-# Exercise : Meta Types ?
-## What is the type of Int ? What is the type of Union{Int64,Int32} ?
-
-## What is the type of Vector ? What is the type of Vector{Int} ? Why ?
-
-
 # More info at https://docs.julialang.org/en/v1/manual/types/
