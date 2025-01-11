@@ -10,19 +10,20 @@ typeof(q)
 
 # Real Numbers: Float64
 y = 3.14
-α = 1.
+α = 1.      # character α can be typed by writing "\alpha" and using Tab
 r = 1e3
 typeof(r)
 
 # Numerical constants
-π
-ℯ
+π           # \pi
+ℯ           # \euler
 ## 3 special Float64 values
 Inf
 eps(Float64)
 NaN
-## π is not a Float, why ?
+## π is not a Float.
 typeof(π)
+## one reason why
 sin(π)
 sin(float(π))
 
