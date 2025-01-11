@@ -12,7 +12,6 @@ To configure a local environment with VSCode and GitHub (assuming that you have 
 1. Follow the installation <https://code.visualstudio.com/docs/languages/julia>
 2. Fork this repository (`Fork` button in the top-right corner)
 3. On VSCode, click the `Source Control` button on the left panel -> Clone Repository -> Select where you want to put your local copy of the repository -> Open it
-4. Install the [GitHub Pull Requests VSCode extension](vscode:extension/GitHub.vscode-pull-request-github)
 
 ## Contents
 
