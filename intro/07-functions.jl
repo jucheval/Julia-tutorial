@@ -72,7 +72,7 @@ myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
 filter(x -> x <= 3, 1:10)
 ## reduce applies a binary operator iteratively
 reduce(+, 1:10)     # sum of the first 10 integers
-## mapreduce(f, op, v) is an alias for reduce(op, map(f, v))
+## mapreduce(f, op, v) is equivalent reduce(op, map(f, v)) but generally faster !!
 mapreduce(x -> x^2, +, 1:10)    # sum of the first 10 squares
 
 # ! convention

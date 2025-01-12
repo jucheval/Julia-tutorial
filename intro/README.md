@@ -8,3 +8,9 @@
 5. [`if`-`elseif`-`else` statements](05-if-elseif-else.jl)
 6. [`for` and `while` loops](06-loops.jl)
 7. [Functions](07-functions.jl)
+
+## To add ?
+
+- talk about Constructors
+- easy ways to produce vectors or arrays
+- simplify a lot. Complex things will be in development
