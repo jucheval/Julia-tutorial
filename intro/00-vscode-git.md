@@ -2,6 +2,10 @@
 
 ## VS Code
 
+### Markdown
+
+- Click on `Open Preview to the Side` (shortcut `Cmd+K V`).
+
 ### Julia REPL (read–eval–print loop)
 
 - Open the Command Palette (`Cmd+Maj+P` on macOs or `Ctrl+Maj+P` on Windows, shortcuts below correspond to macOs)
@@ -41,10 +45,17 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
 ### Standard workflow (in VS Code)
 
 1. Modify your files: each modified file appears in the Source Control panel.
-2. Go to the Source Control panel.
+2. Go to the Source Control (in the left panel).
     1. Stage the changes you want to commit: `+` button on the right of the file name (`click` on the filename to open a diff panel).
     2. Type a message in the upper text box which explains your changes. Select the `Commit` button.
     3. Select the `Sync Changes` button to update your local repository with the remote one.
+
+### Contribute to a repository
+
+1. Go to GitHub Pull Requests extension (in the left panel).
+2. Push the `Create Pull Request` button in the top bar.
+3. Chose a title and a description.
+4. Push the `Create` button below the description text box.
 
 ### Tips
 
