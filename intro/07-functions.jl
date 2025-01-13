@@ -1,10 +1,12 @@
 # Functions
+
+# Standard syntax
 function function_name()
     return "function output"
 end
 function_name()
 
-# Short form
+# Short syntax
 short_function() = "short function output"
 short_function()
 
@@ -31,9 +33,16 @@ function kwarg_only(; key1, key2)
 end
 kwarg_only(; key2 = 4, key1 = 2)
 
-# function vs methods
+# Specify argument type, argument::Type
+only_for_array(x::Array) = "argument is an Array"
+only_for_array([1])
+only_for_array(1)
+
+# Function vs methods
+## Each (generic) function have several methods depending on the types of the arguments
 ## Julia searches the method with the closest supertype of the argument
-myfunction(x) = "General method"    # Corresponds to x::Any
+myfunction(x) = "General method"
+## same as myfunction(x::Any) = "General method"
 myfunction(x::Real) = "Real method"
 myfunction(x::Float64) = "Float64 method"
 myfunction(3.1)
@@ -47,6 +56,7 @@ methods(myfunction)
 methodswith(Irrational)
 
 # Multiple dispatch
+## Julia manages methods for all the arguments of a function
 myfunction(x::Int, y::Float64) = "Int first"
 myfunction(x::Int, y::Int) = "Int first and it's a match !"
 myfunction(x::Float64, y::Int) = "Float64 first"
@@ -60,20 +70,23 @@ myfunction(1., 2.)
 (x -> 2*x)(2)
 
 # map (broadcasting)/reduce/mapreduce
-## map and broadcasting (.) are used to broadcast functions of type T to Vectors{T}
-## In other words, Julia executes a for loop without explicitly writing it
-## Julia performance tips recommend map over the dot syntax
+## map and broadcasting (with the dot syntax, see teh second line below) are used to broadcast functions of type T to Vectors{T}
+### In other words, Julia executes a for loop without explicitly writing it
 map(myfunction, Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
 myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
-## note that Any[..] above is an artifact of the example 
-## it is needed otherwise the Int's are converted into Float's and all the outputs are the same
+### note that Any[..] above is an artifact of the example 
+### it is needed otherwise the Int's are converted into Float's and all the outputs are the same
+
+## Julia performance tips recommend map over the broadcasting
 
 ## filter extracts the values matching a certain condition
-filter(x -> x <= 3, 1:10)
+filter(x -> x^2 <= 5, -10:10)
 ## reduce applies a binary operator iteratively
-reduce(+, 1:10)     # sum of the first 10 integers
+### sum of the first 10 integers
+reduce(+, 1:10)
 ## mapreduce(f, op, v) is equivalent reduce(op, map(f, v)) but generally faster !!
-mapreduce(x -> x^2, +, 1:10)    # sum of the first 10 squares
+### sum of the first 10 squares
+mapreduce(x -> x^2, +, 1:10)
 
 # ! convention
 ## function names ending with ! mutates at least one of their arguments
@@ -85,8 +98,8 @@ x
 sort!(x)
 x
 
-# Respect the types
-## Note that both functions below take arguments of Any type
+# Main performance tip
+## If possible, specify the type when you initialize an Array
 function f1(x)
     output = []
     for i in eachindex(x)
@@ -102,6 +115,8 @@ end
 using BenchmarkTools
 @benchmark f1(rand(Int(1e5)))
 @benchmark f2(rand(Int(1e5)))
+## Note that both functions below take arguments of Any type
+## but the second one is less general and may end up with an error
 f1(["ok since output is Vector{Any}"])
 f2(["error since output is Vector{Float64}"])
 
