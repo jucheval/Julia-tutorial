@@ -11,7 +11,9 @@ subtypes(Integer)
 # Comparisons
 Bool <: Integer
 1 isa Integer
-isa(1,Number)       # all operators can be written as regular functions
+## "<:" and "isa" above have "operator syntax"
+## but can be written as regular functions
+isa(1,Number)
 
 # AbstractFloat vs Float64, Float32
 x = 1.
@@ -34,35 +36,36 @@ x_vec == [1;2;3;4]
 x_vec != [1 2 3 4]
 
 # It's all Array{Type, N}
+Vector{Int64}
 Vector
 Matrix
-
-# Ways to construct Arrays
+## ways to construct Arrays
 [i^2 for i in 1:10]
 ones(4)
 zeros(2,3)
 fill("a", (2,2,2))
 rand(2,3)
 reshape([1,2,3,4], (2,2))
-
-# All values in an Array must have the same type
+## all values in an Array must have the same type
 [1, 2]
 [1, 2.]
 ["a", true]
-## the chosen type may be the first common ancestor in the types tree
-## but sometimes conversion applies
-
+### the chosen type may be the first common ancestor in the types tree
+### but sometimes conversion applies
 # Promotion and conversion
 ## Julia makes automatic conversions during numeric operations
 ## for instance, before summing a Float32 and a Float64, Julia converts the Float32 to a Float64
 
+## More info at https://docs.julialang.org/en/v1/manual/arrays/
+
 # Tuple and NamedTuple
 ## variables of different types usually are stored in Tuples
 tuple = ("a", true)
-tuple[1]    # accessed like Vectors
+## accessed like Vectors
+tuple[1]
 ## but they are not mutable
 tuple[1] = "b"
-typeof(tuple)   # Each type is specified
+typeof(tuple)   # each type is specified
 ## some functions return a Tuple
 (nrow, ncol) = size(x_mat)
 ## or
@@ -70,6 +73,5 @@ nrow, ncol = size(x_mat)
 nrow
 ## there is also NamedTuples, very neat to define parameters (see DrWatson package)
 namedtuple = (a = 1, b = 3)
-
 
 # More info at https://docs.julialang.org/en/v1/manual/types/

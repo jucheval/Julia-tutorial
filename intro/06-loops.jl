@@ -4,16 +4,17 @@
 ## start:end, step = 1
 1:10
 ## start:step:end
-1:.5:20     # note that the range has type Float64
+1:.5:20
+## note that the range has type Float64
 
 ## They are not Vectors. 
-## Use collect to get the associated vector
+### Use collect to get the associated vector
 collect(1:10)
-## however this is not recommended because of the memory size
+### however this is not recommended because of the memory size
 Base.summarysize(1:1_000_000)
 Base.summarysize(collect(1:1_000_000))
 
-# for-loops
+# For loops
 for n in [1, 2, 5, 7]
     println(n)
 end
