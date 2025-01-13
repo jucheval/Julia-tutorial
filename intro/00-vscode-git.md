@@ -2,14 +2,16 @@
 
 ## VS Code
 
+Keyboard shortcuts below correspond to macOs. Usually, the correspondance `Cmd` -> `Ctrl` and `Option` -> `Alt` gives you the shortcuts on Windows or Linux.
+
 ### Markdown
 
-- Click on `Open Preview to the Side` (shortcut `Cmd+K V`).
+- Click on the `Open Preview to the Side` button (top right corner, shortcut `Cmd+K V`).
 
 ### Julia REPL (read–eval–print loop)
 
 - Open the Command Palette (`Cmd+Maj+P` on macOs or `Ctrl+Maj+P` on Windows, shortcuts below correspond to macOs)
-- Search the command "Julia: Restart REPL", the shortcut is displayed and should be `Alt+j Alt+r`
+- Search the command "Julia: Restart REPL", the shortcut is displayed and should be `Option+j Option+r`
 - It opens a Julia REPL on the bottom panel. This panel can also contain a standard terminal
 - REPL has four modes :
   - default : Julia
@@ -18,19 +20,19 @@
   - `;` : shell
 - Hit `Backspace` to return to Julia
 
-I advise you to activate option `Execution: Code In REPL` in VS Code settings (bottom left button -> `Settings`, or `Cmd+,`)
+I advise you to activate option `Execution: Code In REPL` in VS Code settings (bottom left button `Manage` -> `Settings`, or `Cmd+,`)
 
 ### Shortcuts ([More info](https://code.visualstudio.com/docs/getstarted/keybindings))
 
 - General
   - `Option+click`: get multiple cursors
   - `Cmd+click`: follow links
-  - `Alt+Cmd+←/→`: navigate between tabs
-  - `Alt+↑/↓`: move lines up or down
-  - `Maj+Alt+↑/↓`: copy lines up or down
+  - `Option+Cmd+←/→`: navigate between tabs
+  - `Option+↑/↓`: move lines up or down
+  - `Maj+Option+↑/↓`: copy lines up or down
 - Julia specific
   - `Maj+Enter`: execute code in REPL
-  - `Alt+j Alt+r`: restart REPL
+  - `Option+j Option+r`: restart REPL
 
 ### Code completion (IntelliSense, [more info](https://code.visualstudio.com/docs/editor/intellisense))
 
@@ -42,7 +44,7 @@ Snippets are powerful completions. Extensions provide snippets but you can also 
 
 If you clone a repository from GitHub/GitLab, it becomes a local git repository. If not, look at [how to initialize a repository in a local folder](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_initialize-a-repository-in-a-local-folder).
 
-### Standard workflow (in VS Code)
+### Standard workflow (in VS Code, [more info](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git))
 
 1. Modify your files: each modified file appears in the Source Control panel.
 2. Go to the Source Control (in the left panel).
@@ -50,7 +52,7 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
     2. Type a message in the upper text box which explains your changes. Select the `Commit` button.
     3. Select the `Sync Changes` button to update your local repository with the remote one.
 
-### Contribute to a repository
+### Contribute to a repository ([more info](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_using-branches))
 
 1. Go to GitHub Pull Requests extension (in the left panel).
 2. Push the `Create Pull Request` button in the top bar.
@@ -68,4 +70,10 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
   - Keep the first line short
   - Add more details in the body if needed
   - Use present tense (e.g., "Add feature" not "Added feature")
-- Create a `.gitignore` file in the root directory of your repository ([more info](https://github.com/github/gitignore)).
+- Create a `.gitignore` file in the root directory of your repository ([templates for several languages](https://github.com/github/gitignore)).
+  - For instance in the `.gitignore` file of this repo, there is `private-files/`
+  - It corresponds to a directory located in my local repo but not in the git versioning and, in turn, not in the remote repo or your local repo.
+
+## Next
+
+Julia file [01-packages.jl](01-packages.jl)
