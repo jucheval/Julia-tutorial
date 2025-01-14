@@ -3,7 +3,7 @@
 [![CC BY-SA
 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-This is inspired from <https://github.com/storopoli/Julia-Workshop.git>.
+This is inspired from <https://github.com/storopoli/Julia-Workshop.git>. If you like this tutorial, please add a Star to the repo (button in the top right corner).
 
 ## How to use the content?
 
@@ -13,7 +13,6 @@ To configure a local environment with VSCode and GitHub (assuming that you have 
 2. Fork this repository (`Fork` button in the top-right corner). [More info](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)
 3. On VSCode, click the `Source Control` button on the left panel -> Clone Repository -> Select where you want to put your local copy of the repository -> Open it. [More info](https://code.visualstudio.com/docs/sourcecontrol/overview)
 4. Install the [GitHub Pull Requests VSCode extension](vscode:extension/GitHub.vscode-pull-request-github).
-
 
 ## Contents
 
