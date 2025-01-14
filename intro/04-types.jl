@@ -34,6 +34,9 @@ x_mat = [1 2; 3 4]
 x_vec == [1;2;3;4]
 ## and not rows
 x_vec != [1 2 3 4]
+## matrix product vs element-wise product
+x_mat * x_mat
+x_mat .* x_mat
 
 # It's all Array{Type, N}
 Vector{Int64}
