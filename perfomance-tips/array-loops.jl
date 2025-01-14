@@ -1,6 +1,6 @@
 using BenchmarkTools
 
-a = reshape(rand(10_000), (100,100))
+a = reshape(100,100)
 
 function row_col_loop(a::AbstractArray)
     nrows, ncols = size(a)
@@ -28,8 +28,8 @@ function eachindex_loop(a::AbstractArray)
     end
 end
 println("Compute element-wise square of a 100x100 matrix in a new matrix")
-print("row -> col:"); @btime row_col_loop(a)
-print("col -> row:"); @btime col_row_loop(a)
-print("eachindex:"); @btime eachindex_loop(a)
-println("I do not understand why the eachindex loop is slower than the col -> row loop")
-println("The tradeoff is inversed when we mutate the input matrix instead of creating a new one")
+print("row -> col:"); @btime row_col_loop(a);
+print("col -> row:"); @btime col_row_loop(a);
+print("eachindex:"); @btime eachindex_loop(a);
+println("The eachindex loop is slower than the col -> row loop because of bounds checking")
+println("However, the tradeoff is inverted when we mutate the input matrix instead of creating a new one")
