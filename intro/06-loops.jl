@@ -25,13 +25,13 @@ end
 for (id, value) in enumerate(["a", "b", "c"])
     println( (id, value) )
 end
-## to explore an Array, Julia doc recommends to use eachindex
+## to explore an Array, Julia doc recommends to use eachindex (way faster, see below)
 a = reshape(1:8, (2,2,2))
 for id in eachindex(a)
     println(a[id])
 end
-## this enumeration is coherent with the filling order 
-## and the faster exploration order, that is the inner most loop correspond to rows, and so on...
+## this enumeration is coherent with the filling order and the faster exploration order, 
+## that is the inner most loop correspond to rows, and so on...
 for tube in 1:2
     for col in 1:2
         for row in 1:2
@@ -39,6 +39,8 @@ for tube in 1:2
         end
     end
 end
+## some benchmarks
+include("../perfomance-tips/array-loops.jl")
 
 # While loops
 i = 1
