@@ -50,7 +50,7 @@ while i < 5
 end
 
 # Exercises
-# 1. Write a Julia program to construct this pattern below:
+# 1. Write for loops to construct this pattern below:
 ## * 
 ## * * 
 ## * * * 
@@ -65,8 +65,8 @@ end
 ## The sum of these multiples is 23.
 ## Find the sum of all the multiples of 3 or 5 that are less or equal than 1000.
 
-# 3. Print all natural numbers from 1 to 10 in reverse
+# 3. Print all natural numbers from 1 to 10 in reverse with a while loop
 
-# 4. Print all natural *even* numbers from 1 to 10
+# 4. Print all natural *even* numbers from 1 to 10 with a while loop
 
 # More info at https://docs.julialang.org/en/v1/manual/control-flow/#man-loops

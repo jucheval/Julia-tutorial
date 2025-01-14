@@ -1,4 +1,4 @@
-# 1. Write a Julia program to construct this pattern below:
+# 1. Write for loops to construct this pattern below:
 ## * 
 ## * * 
 ## * * * 
@@ -31,14 +31,14 @@ for n in 1:N
     end
 end
 
-# 3. Print all natural numbers from 1 to 10 in reverse
+# 3. Print all natural numbers from 1 to 10 in reverse with a while loop
 i = 10
 while i >= 1
     println(i)
     i -= 1
 end
 
-# 4. Print all natural *even* numbers from 1 to 10
+# 4. Print all natural *even* numbers from 1 to 10 with a while loop
 i = 1
 while i <= 10
     if i % 2 == 0
