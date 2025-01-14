@@ -89,4 +89,4 @@ I will validate your PR shortly.
 
 ## Next
 
-Julia script file [`01-packages.jl`](01-packages.jl)
+Julia script file [`01-packages.jl`](01-packages.jl). The aim is to open the script in VS Code, execute lines using `Maj+Enter` and read the comments.
