@@ -27,6 +27,9 @@ I advise you to activate option `Execution: Code In REPL` in VS Code settings (b
 - General
   - `Option+click`: get multiple cursors
   - `Cmd+click`: follow links
+    - 🔥 urls -> open the webpage in your browser
+    - 🚀 files within your workspace -> open the file in editor
+    - 🤯 variable names -> go to source code
   - `Option+Cmd+←/→`: navigate between tabs
   - `Option+↑/↓`: move lines up or down
   - `Maj+Option+↑/↓`: copy lines up or down
@@ -54,7 +57,7 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
 
 ### Contribute to a repository ([more info](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_using-branches))
 
-1. Go to GitHub Pull Requests extension (in the left panel).
+1. Go to Source Control.
 2. Push the `Create Pull Request` button in the top bar.
 3. Chose a title and a description.
 4. Push the `Create` button below the description text box.
@@ -70,10 +73,20 @@ If you clone a repository from GitHub/GitLab, it becomes a local git repository.
   - Keep the first line short
   - Add more details in the body if needed
   - Use present tense (e.g., "Add feature" not "Added feature")
-- Create a `.gitignore` file in the root directory of your repository ([templates for several languages](https://github.com/github/gitignore)).
+- Create a `.gitignore` file in the root directory of your repository ([templates for several programming languages](https://github.com/github/gitignore)).
   - For instance in the `.gitignore` file of this repo, there is `private-files/`
   - It corresponds to a directory located in my local repo but not in the git versioning and, in turn, not in the remote repo or your local repo.
 
+### Application
+
+Here are some steps to do on the file [`../participants.md`](../participants.md):
+
+1. Add your name and date on top of the list. Save the file.
+2. Commit your changes.
+3. Create a Pull Request (PR).
+
+I will validate your PR shortly.
+
 ## Next
 
-Julia file [01-packages.jl](01-packages.jl)
+Julia script file [`01-packages.jl`](01-packages.jl)
