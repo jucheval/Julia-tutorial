@@ -22,6 +22,6 @@ x < y ? "x is less than y" : "x is not less than y"
 # Exercises
 ## 1. Test if a number is a multiple of 3, 5 or 7
 
-## 2. Print which quadrant in the Cartesian plane a point is located
+## 2. For a given variable x, print "x is an Integer", "x is a non Integer Real number", or "x is not a Real number" depending on x's type (not on its value)
 
 # More info at https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation

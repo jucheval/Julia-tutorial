@@ -12,16 +12,12 @@ else
 end
 
 # 2: Print which quadrant in the Cartesian plane a point is located
-x, y = rand(-1.0:0.1:1.0, 2)
+x = 1.
 
-if x > 0 && y > 0
-    println("Point ($x, $y) lies in the first quadrant")
-elseif x < 0 && y > 0
-    println("Point ($x, $y) lies in the second quadrant")
-elseif x < 0 && y < 0
-    println("Point ($x, $y) lies in the third quadrant")
-elseif x > 0 && y < 0
-    println("Point ($x, $y) lies in the fourth quadrant")
+if typeof(x)<:Integer
+    println("x is an Integer")
+elseif typeof(x)<:Real
+    println("x is a non Integer Real number")
 else
-    println("Point ($x, $y) lies on at least one of the axes")
+    println("x is not a Real number")
 end
