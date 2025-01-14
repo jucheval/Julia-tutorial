@@ -11,8 +11,8 @@
 ### Use collect to get the associated vector
 collect(1:10)
 ### however this is not recommended because of the memory size
-Base.summarysize(1:1_000_000)
-Base.summarysize(collect(1:1_000_000))
+sizeof(1:1_000_000)
+sizeof(collect(1:1_000_000))
 
 # For loops
 for n in [1, 2, 5, 7]

@@ -22,8 +22,8 @@ y = Float32(1)
 y isa AbstractFloat
 !( y isa Float64 )
 ## their memory sizes are different
-Base.summarysize(x)
-Base.summarysize(y)
+sizeof(x)
+sizeof(y)
 
 # Vector{Type}
 x_vec = [1, 2, 3, 4]
