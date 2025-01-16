@@ -21,6 +21,12 @@ end
 for n ∈ 0:1_000:10_000 # \in + tab
     println(n)
 end
+## continue and break
+for n in 1:100
+    isodd(n) && continue
+    println(n)
+    n>10 && break
+end
 ## enumerate
 for (id, value) in enumerate(["a", "b", "c"])
     println( (id, value) )
