@@ -93,21 +93,21 @@ end
 begin
     println()
     println("Compute element-wise square of a 100x100 matrix in a new matrix")
-    print("row -> col:"); @btime row_col_loop(a);
-    print("col -> row:"); @btime col_row_loop(a);
-    print("eachindex:"); @btime eachindex_loop(a);
-    print("length:"); @btime length_loop(a);
-    print("broadcast:"); @btime broadcast_loop(a);
-    print("dot broadcast:"); @btime dot_broadcast_loop(a);
-    print("map:"); @btime map_loop(a);
-    print("comprehension:"); @btime comprehension_loop(a);
-    print("row -> col!:"); @btime row_col_loop!(a);
-    print("col -> row!:"); @btime col_row_loop!(a);
-    print("eachindex!:"); @btime eachindex_loop!(a);
-    print("length!:"); @btime length_loop!(a);
-    print("broadcast!:"); @btime broadcast_loop!(a);
+    print("row -> col:    "); @btime row_col_loop(a);
+    print("col -> row:    "); @btime col_row_loop(a);
+    print("eachindex:     "); @btime eachindex_loop(a);
+    print("length:        "); @btime length_loop(a);
+    print("broadcast:     "); @btime broadcast_loop(a);
+    print("dot broadcast: "); @btime dot_broadcast_loop(a);
+    print("map:           "); @btime map_loop(a);
+    print("comprehension: "); @btime comprehension_loop(a);
+    print("row -> col!:   "); @btime row_col_loop!(a);
+    print("col -> row!:   "); @btime col_row_loop!(a);
+    print("eachindex!:    "); @btime eachindex_loop!(a);
+    print("length!:       "); @btime length_loop!(a);
+    print("broadcast!:    "); @btime broadcast_loop!(a);
     print("dot broadcast!:"); @btime dot_broadcast_loop!(a);
-    print("map!:"); @btime map_loop!(a);
+    print("map!:          "); @btime map_loop!(a);
     print("comprehension!:"); @btime comprehension_loop!(a);
 end
 
