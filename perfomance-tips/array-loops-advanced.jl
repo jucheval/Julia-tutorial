@@ -123,7 +123,7 @@ end
 begin
     println()
     println("Compute the sum of a 100x100 matrix")
-    print("sum (alias of reduce(+,x)):");@btime sum(a); # more or less an alias for reduce(+, a)
+    print("sum (alias of reduce(+,x)):");@btime sum(a); # in fact + is replace by add_sum
     print("reduce:");@btime reduce(+, a);
     print("loop:");@btime sum_loop(a);
 end
