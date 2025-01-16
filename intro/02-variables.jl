@@ -39,6 +39,11 @@ wrongname = 'Julien'
 letter = 'J'
 typeof(name)
 typeof(letter)
+## string concatenation
+"The author is " * name
+"Its initials are " * 'J' * 'C'
+## + and * convention :
+### + is always symmetric, * may be not
 
 # Assignment vs mutation
 a = [1,2,3]
