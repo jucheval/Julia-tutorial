@@ -1,6 +1,6 @@
 using BenchmarkTools
 
-a = rand(100,100)
+a = zeros(100,100)
 
 # map and broadcast use the @inbounds macro to avoid bounds checking
 # hence I added the @inbounds to the explicit loops in order to have a fair comparison
