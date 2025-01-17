@@ -12,25 +12,69 @@ The benchmarks are made thanks to the `@btime` macro of [BenchmarkTools.jl](http
 
 ## Use map/reduce/mapreduce
 
-## Performance critical code should be inside a function
+During a for loop over an array, some execution time is consumed by the bounds checking: check that the indices at which you want to get or set a value is indeed within the bounds of the array. These checks can be bypassed via the `@inbounds` macro if you are 100% sure of what you are doing. Most common cases are:
 
-> Any code that is performance critical should be inside a function. Code inside functions tends to run much faster than top level code, due to how Julia's compiler works.
+- applying a function `f` element-wise to an array `x`,
+- reducing the array `x` via a binary operator `op`.
 
-## Pay attention to memory allocation
+I respectively recommend to use `map(f, x)` or `reduce(op ,x)`. Look also for `mapreduce(f, op, x)` which is equivalent to `reduce(op, map(f, x))` but usually faster.
 
-## Avoid containers with abstract type parameters
+Look at [array-loops-advanced.jl](array-loops-advanced.jl).
 
-## Be aware of when Julia avoids specializing
+## Help the compiler to make type inference
 
-## Break functions into multiple definitions
+Julia compiler is making type inference. It deduces the types of later values from the types of input values.
 
-## Write "type-stable" functions
+Look at [type-inference.jl](type-inference.jl).
+
+### Avoid untyped global variables
+
+> The value of an untyped global variable might change at any point, possibly leading to a change of its type.
+
+This makes it difficult for the compiler to infer its type and the type of later values. A good way to avoid this issue is to pass the variable as a function argument.
+
+Look at [untyped-variables.jl](untyped-variables.jl).
+
+### Write "type-stable" functions
 
 > When possible, it helps to ensure that a function always returns a value of the same type.
 
-It helps Julia compiler to make type inference along your code: it deduces the types of later values from the types of input values. If your function typically returns `normal_output::T` then consider to use `convert(T, anormal_output)`.
+If, for a fixed argument type, your function returns an `output` of type `T` or `S` depending on some condition on the arguments, then you should consider to use `convert(promote_type(T,S), output)` before returning `output`.
 
-## Avoid changing the type of a variable
+One example is the division operator `/`. One could argue that `4 / 2` should be `2::Int`. However, `x::Int / y::Int` is not an integer in general (for instance `1 / 2`). Hence, `x::Int / y::Int` always returns a `Float64`.
+
+## Avoid containers with abstract type parameters
+
+> When working with parameterized types, including arrays, it is best to avoid parameterizing with abstract types where possible.
+
+For instance, initialize a vector of real numbers by `x = Float64[]` rather than `x = Real[]` if possible. If not, you may even prefer `x = Any[]`to avoid type checking.
+
+Look at [abstract-type.jl](abstract-type.jl).
+
+## Break functions into multiple methods
+
+Julia's writing style is to use multiple method definitions rather than `if` statements devoted to exhaust all possible argument types. For instance, do not write:
+
+```julia
+function vecormat(A)
+    if A::Vector
+        return "vector"
+    elseif A::Matrix
+        return "matrix"
+    else
+        error("not a vector or matrix")
+    end
+end
+```
+
+but rather:
+
+```julia
+vecormat(A::Vector) = "vector"
+vecormat(A::Matrix) = "matrix"
+```
+
+The case where `A` is neither a `Vector` or a `Matrix` will throw a `MethodError`.
 
 ## Separate kernel functions (aka, function barriers)
 
