@@ -98,28 +98,23 @@ x
 sort!(x)
 x
 
-# Main performance tip
-## If possible, specify the type when you initialize an Array
-function f1(x)
-    output = []
-    for i in eachindex(x)
-        push!(output, x[i])
+# JIT compilation
+function JITexample(x)
+    s = 0.0
+    for i in x
+        s += i
     end
+    return s
 end
-function f2(x)
-    output = Float64[]
-    for i in eachindex(x)
-        push!(output, x[i])
-    end
-end
-using BenchmarkTools
-@benchmark f1(rand(Int(1e5)))
-@benchmark f2(rand(Int(1e5)))
-## Note that both functions below take arguments of Any type
-## but the second one is less general and may end up with an error
-f1(["ok since output is Vector{Any}"])
-f2(["error since output is Vector{Float64}"])
-
+@time JITexample(rand(100_000));
+@time JITexample(rand(100_000));
+## The two times are equivalent. The function JITexample is not compiled yet
+x = rand(100_000);
+@time JITexample(x);
+## This time, JIT compilation applies and time is larger
+x = rand(100_000);
+@time JITexample(x);
+## This time, the function is compiled and time is smaller
 
 # Exercises
 
