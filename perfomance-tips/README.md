@@ -8,6 +8,18 @@ Each tip is illustrated via a Julia script file. All of them can be called from 
 
 ## Table of Contents
 
+- [Use map/reduce/mapreduce](#use-mapreducemapreduce)
+- [Access arrays in memory order, along columns](#access-arrays-in-memory-order-along-columns)
+- [Pre-allocating outputs](#pre-allocating-outputs)
+- [Help the compiler to make type inference](#help-the-compiler-to-make-type-inference)
+  - [Avoid untyped global variables](#avoid-untyped-global-variables)
+  - [Write "type-stable" functions](#write-type-stable-functions)
+  - [Avoid containers with abstract type parameters](#avoid-containers-with-abstract-type-parameters)
+- [Break functions into multiple methods](#break-functions-into-multiple-methods)
+- [Separate kernel functions (aka, function barriers)](#separate-kernel-functions-aka-function-barriers)
+- [Performance of captured variable](#performance-of-captured-variable)
+- [Consider using views for slices (but not always)](#consider-using-views-for-slices-but-not-always)
+
 ## Use map/reduce/mapreduce
 
 During a for loop over an array, some execution time is consumed by the bounds checking: check that the indices at which you want to get or set a value is indeed within the bounds of the array. These checks can be bypassed via the `@inbounds` macro if you are 100% sure of what you are doing. Most common cases are:
