@@ -76,9 +76,6 @@ map(myfunction, Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
 myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
 ### note that Any[..] above is an artifact of the example 
 ### it is needed otherwise the Int's are converted into Float's and all the outputs are the same
-
-## Julia performance tips recommend map over the broadcasting
-
 ## filter extracts the values matching a certain condition
 filter(x -> x^2 <= 5, -10:10)
 ## reduce applies a binary operator iteratively
