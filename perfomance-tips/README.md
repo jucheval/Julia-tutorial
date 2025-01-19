@@ -1,6 +1,6 @@
 # Performance tips
 
-This document is based the [Performance Tips](https://docs.julialang.org/en/v1/manual/performance-tips/) page in the Julia documentation. Most of the sections below are a subset of the sections there. Moreover, all the quotes below come from there.
+This document is based the [Performance Tips](https://docs.julialang.org/en/v1/manual/performance-tips/) page in the Julia documentation. Most of the sections below are a subset of the sections there. Moreover, all the quotes below come from there. The most simple and efficient tips were selected. If you think that one tip of [Performance Tips](https://docs.julialang.org/en/v1/manual/performance-tips/) should be added below, or conversely, one tip below should be removed, feel free to raise an issue on this repo.
 
 The benchmarks are made thanks to the `@btime` macro of [BenchmarkTools.jl](https://juliaci.github.io/BenchmarkTools.jl/stable/). This macro returns the minimum elapsed time measured during the benchmark (over 10 000 samples if the really fast).
 
