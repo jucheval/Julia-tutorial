@@ -61,19 +61,19 @@ myfunction(x::Int, y::Float64) = "Int first"
 myfunction(x::Int, y::Int) = "Int first and it's a match !"
 myfunction(x::Float64, y::Int) = "Float64 first"
 myfunction(x::Float64, y::Float64) = "Float64 first and it's a match"
-myfunction(1, 2.)
+myfunction(1, 2.0)
 myfunction(1, 2)
-myfunction(1., 2)
-myfunction(1., 2.)
+myfunction(1.0, 2)
+myfunction(1.0, 2.0)
 
 # Anonymous functions
-(x -> 2*x)(2)
+(x -> 2 * x)(2)
 
 # map (broadcasting)/reduce/mapreduce
 ## map and broadcasting (with the dot syntax, see teh second line below) are used to broadcast functions of type T to Vectors{T}
 ### In other words, Julia executes a for loop without explicitly writing it
-map(myfunction, Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
-myfunction.(Any[1, 1, 1., 1.], Any[2., 2, 2, 2.])
+map(myfunction, Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2, 2.0])
+myfunction.(Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2, 2.0])
 ### note that Any[..] above is an artifact of the example 
 ### it is needed otherwise the Int's are converted into Float's and all the outputs are the same
 ## filter extracts the values matching a certain condition

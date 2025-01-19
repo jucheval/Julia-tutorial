@@ -12,11 +12,11 @@ else
 end
 
 # 2: Print which quadrant in the Cartesian plane a point is located
-x = 1.
+x = 1.0
 
-if typeof(x)<:Integer
+if typeof(x) <: Integer
     println("x is an Integer")
-elseif typeof(x)<:Real
+elseif typeof(x) <: Real
     println("x is a non Integer Real number")
 else
     println("x is not a Real number")

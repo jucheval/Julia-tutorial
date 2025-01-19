@@ -4,7 +4,7 @@
 ## start:end, step = 1
 1:10
 ## start:step:end
-1:.5:20
+1:0.5:20
 ## note that the range has type Float64
 
 ## They are not Vectors. 
@@ -25,14 +25,14 @@ end
 for n in 1:100
     isodd(n) && continue
     println(n)
-    n>10 && break
+    n > 10 && break
 end
 ## enumerate
 for (id, value) in enumerate(["a", "b", "c"])
-    println( (id, value) )
+    println((id, value))
 end
 ## to explore an Array, Julia doc recommends to use eachindex (way faster, see below)
-a = reshape(1:8, (2,2,2))
+a = reshape(1:8, (2, 2, 2))
 for id in eachindex(a)
     println(a[id])
 end

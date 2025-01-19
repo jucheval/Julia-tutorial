@@ -13,14 +13,14 @@ Bool <: Integer
 1 isa Integer
 ## "<:" and "isa" above have "operator syntax"
 ## but can be written as regular functions
-isa(1,Number)
+isa(1, Number)
 
 # AbstractFloat vs Float64, Float32
-x = 1.
+x = 1.0
 x isa AbstractFloat
 y = Float32(1)
 y isa AbstractFloat
-!( y isa Float64 )
+!(y isa Float64)
 ## their memory sizes are different
 sizeof(x)
 sizeof(y)
@@ -31,7 +31,7 @@ x_vec = [1, 2, 3, 4]
 # Matrix{Type}
 x_mat = [1 2; 3 4]
 ## vectors are columns
-x_vec == [1;2;3;4]
+x_vec == [1; 2; 3; 4]
 ## and not rows
 x_vec != [1 2 3 4]
 ## matrix product vs element-wise product
@@ -45,13 +45,13 @@ Matrix
 ## ways to construct Arrays
 [i^2 for i in 1:10]
 ones(4)
-zeros(2,3)
-fill("a", (2,2,2))
-rand(2,3)
-reshape([1,2,3,4], (2,2))
+zeros(2, 3)
+fill("a", (2, 2, 2))
+rand(2, 3)
+reshape([1, 2, 3, 4], (2, 2))
 ## all values in an Array must have the same type
 [1, 2]
-[1, 2.]
+[1, 2.0]
 ["a", true]
 ### the chosen type may be the first common ancestor in the types tree
 ### but sometimes conversion applies
@@ -75,6 +75,6 @@ typeof(tuple)   # each type is specified
 nrow, ncol = size(x_mat)
 nrow
 ## there is also NamedTuples, very neat to define parameters (see DrWatson package)
-namedtuple = (a = 1, b = 3)
+namedtuple = (a=1, b=3)
 
 # More info at https://docs.julialang.org/en/v1/manual/types/
