@@ -1,10 +1,9 @@
 using BenchmarkTools
 
-begin
 a = zeros(100,100)
 
 # map and broadcast use the @inbounds macro to avoid bounds checking
-# hence I added the @inbounds to the explicit loops in order to have a fair comparison
+# hence the @inbounds was added to the explicit loops in order to have a fair comparison
 ## The results are quite different without the @inbounds macro
 
 ## Assignment functions
@@ -91,27 +90,29 @@ function comprehension_loop!(a::AbstractArray)
     a .= [x^2 for x in a]
 end;
 
+
+println()
+println("-----------BENCHMARK-----------")
 println()
 println("Compute element-wise square of a 100x100 matrix in a new matrix")
-print("row -> col:    "); @btime row_col_loop(a)
-print("col -> row:    "); @btime col_row_loop(a)
-print("eachindex:     "); @btime eachindex_loop(a)
-print("length:        "); @btime length_loop(a)
-print("broadcast:     "); @btime broadcast_loop(a)
-print("dot broadcast: "); @btime dot_broadcast_loop(a)
-print("map:           "); @btime map_loop(a)
-print("comprehension: "); @btime comprehension_loop(a)
-print("row -> col!:   "); @btime row_col_loop!(a)
-print("col -> row!:   "); @btime col_row_loop!(a)
-print("eachindex!:    "); @btime eachindex_loop!(a)
-print("length!:       "); @btime length_loop!(a)
-print("broadcast!:    "); @btime broadcast_loop!(a)
-print("dot broadcast!:"); @btime dot_broadcast_loop!(a)
-print("map!:          "); @btime map_loop!(a)
-print("comprehension!:"); @btime comprehension_loop!(a)
-end;
+print("row -> col:    "); @btime row_col_loop(a);
+print("col -> row:    "); @btime col_row_loop(a);
+print("eachindex:     "); @btime eachindex_loop(a);
+print("length:        "); @btime length_loop(a);
+print("broadcast:     "); @btime broadcast_loop(a);
+print("dot broadcast: "); @btime dot_broadcast_loop(a);
+print("map:           "); @btime map_loop(a);
+print("comprehension: "); @btime comprehension_loop(a);
+print("row -> col!:   "); @btime row_col_loop!(a);
+print("col -> row!:   "); @btime col_row_loop!(a);
+print("eachindex!:    "); @btime eachindex_loop!(a);
+print("length!:       "); @btime length_loop!(a);
+print("broadcast!:    "); @btime broadcast_loop!(a);
+print("dot broadcast!:"); @btime dot_broadcast_loop!(a);
+print("map!:          "); @btime map_loop!(a);
+print("comprehension!:"); @btime comprehension_loop!(a);
 
-begin
+
 function sum_loop(a::AbstractArray)
     output = zero(eltype(a))
     @inbounds for x in a
@@ -121,8 +122,10 @@ function sum_loop(a::AbstractArray)
 end;
 
 println()
+println("-----------BENCHMARK-----------")
+println()
 println("Compute the sum of a 100x100 matrix")
-print("sum (alias of reduce(+,x)):");@btime sum(a) # in fact + is replace by add_sum
-print("reduce:");@btime reduce(+, a)
-print("loop:");@btime sum_loop(a)
-end;
+print("sum (alias of reduce(+,x)):");@btime sum(a); # in fact + is replace by add_sum
+print("reduce:                    ");@btime reduce(+, a);
+print("loop:                      ");@btime sum_loop(a);
+print()

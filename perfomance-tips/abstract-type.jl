@@ -1,6 +1,5 @@
 using BenchmarkTools
 
-begin
 
 function abstractf()
     x = Real[1,2,π]
@@ -21,8 +20,10 @@ function concretef()
     end
 end
  
-    println("Pushing 1_000 values in a vector of different type")
-    print("Vector{Real}:   "); @btime abstractf()
-    print("Vector{Any}:    "); @btime anyf()
-    print("Vector{Float64}:"); @btime concretef()
-end;
+println()
+println("-----------BENCHMARK-----------")
+println()
+println("Pushing 1_000 values in a vector of different type")
+print("Vector{Real}:   "); @btime abstractf();
+print("Vector{Any}:    "); @btime anyf();
+print("Vector{Float64}:"); @btime concretef();
