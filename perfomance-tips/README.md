@@ -116,6 +116,8 @@ The example in [function-barriers.jl](function-barriers.jl) follows this pattern
 
 Then, we see that it is beneficial to make two functions so that the core computations can specialize to the chosen type.
 
+Call and/or see [function-barriers.jl](function-barriers.jl).
+
 ## Performance of captured variable ([link](https://docs.julialang.org/en/v1/manual/performance-tips/#man-performance-captured))
 
 > Consider the following example that defines an inner function:
@@ -142,11 +144,16 @@ Call and/or see [captured-variable.jl](captured-variable.jl).
 
 > In Julia, an array "slice" expression like `array[1:5, :]` creates a copy of that data (except on the left-hand side of an assignment, where `array[1:5, :] = ...` assigns in-place to that portion of array).
 
-This is good or not depending on your objective :
+This is good or not depending on your objective:
 
-- Many operations on the slice -> **good**, because it is more efficient to work with a smaller contiguous copy.
-- Few operations on the slice -> **bad**, because the cost of the allocation and copy operations can be substantial.
+- Many repetitions on the slice -> **good**, because it is more efficient to work with a smaller contiguous copy.
+- Few repetitions on the slice -> **bad**, because the cost of the allocation and copy operations can be substantial.
 
 > An alternative is to create a "view" of the array, which is an array object (a `SubArray`) that actually references the data of the original array in-place, without making a copy. This can be done for individual slices by calling `view`, or more simply for a whole expression or block of code by putting `@views` in front of that expression.
 
-Call and/or see [views.jl](views.jl). In that exemple, `view` is better only in the case of 1 repetition.
+Two examples are included in [views.jl](views.jl):
+
+- the subarray is contiguous -> `view` seems faster in any case;
+- the coordinates of the subarray are randomly shuffled -> `view` is faster only in the case of 1 repetition.
+
+Call and/or see [views.jl](views.jl).
