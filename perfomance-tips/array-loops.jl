@@ -36,4 +36,4 @@ print("row -> col:"); @btime row_col_loop(a);
 print("col -> row:"); @btime col_row_loop(a);
 print("eachindex: "); @btime eachindex_loop(a);
 println("The eachindex loop is slower than the col -> row loop because of bounds checking (see the file array-loops-advanced.jl for more details)")
-println("FYI, the balance of speed is inverted when we mutate the input matrix instead of creating a new one")
+println("FYI, the eachindex loop achieves the performance of the row -> col loop when we mutate the input matrix instead of creating a new one...")
