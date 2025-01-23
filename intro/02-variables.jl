@@ -52,7 +52,7 @@ b = a
 a[1] = 42
 ## this is a mutation : hence b changes too
 b
-a = 3.14159
+a = [4,5,6]
 ## this is an assignment : b does not change
 b
 
