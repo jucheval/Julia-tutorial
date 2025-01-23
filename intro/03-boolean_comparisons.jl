@@ -2,21 +2,18 @@
 ## Convention : all the Bool written in these files evaluate to true
 
 # && (AND)
-true && true
-## & corresponds to bitwise AND
+true & true
 
 # || (OR)
-true || false
-## | corresponds to bitwise OR
+true | false
 
 # ! (NOT)
 !false
-## ~ corresponds to bitwise NOT
 
 # Numerical comparisons
 1 ≤ 1
 1 < 2 < 3
-(2 < 1) || (3.0 < 6.4)
+(2 < 1) | (3.0 < 6.4)
 1 == 1.0
 1 == true
 !(1 === 1.0)
