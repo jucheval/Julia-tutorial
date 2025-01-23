@@ -12,7 +12,7 @@ subtypes(Integer)
 Bool <: Integer
 1 isa Integer
 ## "<:" and "isa" above have "operator syntax"
-## but can be written as regular functions
+## but any operator can be written as a regular functions
 isa(1, Number)
 
 # AbstractFloat vs Float64, Float32
