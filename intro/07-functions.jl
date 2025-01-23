@@ -25,7 +25,7 @@ function myprint_with_kwarg(x, y; key1, key2 = 2)
 end
 myprint_with_kwarg(1, 2; key1 = 3)
 myprint_with_kwarg(1, 2; key2 = 4, key1 = 2)
-## Arguments before the semicolon (;) are positional (sensible to their position)
+## Arguments before the semicolon (;) are positional. Sensible to position and cannot be named.
 ## Arguments after the semicolon (;) are keywords. Not sensible to position but they must be named
 
 function kwarg_only(; key1, key2)
@@ -112,6 +112,12 @@ x = rand(100_000);
 x = rand(100_000);
 @time JITexample(x);
 ## This time, the function is compiled and time is smaller
+### The compilation is specialized for the type of x (Vector{Float64} here)
+### If you apply it to an other type (Vector{Int}, Matrix{Float64}, etc.), JIT compilation applies again
+### For instance,
+x = rand(Int,1_000);
+@time JITexample(x);
+@time JITexample(x);
 
 # Exercises
 
