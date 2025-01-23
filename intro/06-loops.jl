@@ -5,9 +5,7 @@
 1:10
 ## start:step:end
 1:0.5:20
-## note that the range has type Float64
-
-## They are not Vectors. 
+## They are not Vectors !
 ### Use collect to get the associated vector
 collect(1:10)
 ### however this is not recommended because of the memory size
