@@ -20,7 +20,7 @@ x < y ? "x is less than y" : "x is not less than y"
 ## Evaluates the first expression if the condition is true and the second expression otherwise.
 
 # Exercises
-## 1. Test if a number is a multiple of 3, 5 or 7
+## 1. Test if a number is a multiple of 3, 5 or 7 (use the modulo operator %)
 
 ## 2. For a given variable x, print "x is an Integer", "x is a non Integer Real number", or "x is not a Real number" depending on x's type (not on its value)
 
