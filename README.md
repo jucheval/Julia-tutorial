@@ -29,4 +29,4 @@ This content is licensed under [Creative Commons Attribution-ShareAlike 4.0 Inte
 
 ## Acknowledgments
 
-I would like to warmly thank [Rémy Drouilhet](https://github.com/rcqls) for his constant will to teach and share informations and discussions about Julia.
+I would like to warmly thank [Rémy Drouilhet](https://github.com/rcqls) for his constant will to teach and share informations and discussions about Julia. This tutorial was made for [Statify team](https://team.inria.fr/statify/) during my sabbatical year in the team.
