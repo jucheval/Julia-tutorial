@@ -14,7 +14,9 @@ To configure a local environment with VSCode and GitHub (assuming that you have 
 3. On VSCode, click the `Source Control` button on the left panel -> Clone Repository -> Select where you want to put your local copy of the repository -> Open it. [More info](https://code.visualstudio.com/docs/sourcecontrol/overview)
 4. Install the [GitHub Pull Requests VSCode extension](vscode:extension/GitHub.vscode-pull-request-github).
 
-## Contents
+The majority of the files in the repo are Julia script files (`.jl`). However, each directory contains a `README.md`: they are listed in the table of contents below.
+
+## Table of Contents
 
 - [Introduction](intro/README.md)
 - [Some packages](packages/README.md)
