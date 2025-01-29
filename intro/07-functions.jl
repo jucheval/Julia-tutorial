@@ -121,10 +121,10 @@ x = rand(Int,1_000);
 
 # Exercises
 
-# 1. Make a function `round_number` that rounds a number x as input.
-## It should have two methods:
-## a. Float64 should use the `round` function
-## b. Int64 should just return the input
+# 1. Make a function that accepts any Integer except Bool and returns the passed value. If Bool is passed an error should be thrown. You can either:
+## a) define only one method (which does not accept Bool)
+## b) define two methods (one for Bool and one for the rest). To throw an error you can use
+### throw(ArgumentError("Bool is not supported"))
 
 # 2. Write a function to multiply all the numbers in a vector
 

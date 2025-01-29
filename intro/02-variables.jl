@@ -56,4 +56,14 @@ a = [4,5,6]
 ## this is an assignment : b does not change
 b
 
+# Exercises
+## 1. Consider the following code:
+x = [1, 2]
+y = x
+y[1] = 10
+## Now, what is the value of x[1] ?
+
+y = 2.3
+## Now, what is the value of x ?
+
 # More info at https://docs.julialang.org/en/v1/manual/variables/
