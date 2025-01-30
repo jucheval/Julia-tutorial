@@ -15,8 +15,9 @@ Each tip is illustrated via a Julia script file. All of them can be called from 
   - [Avoid untyped global variables](#avoid-untyped-global-variables-link)
   - [Write "type-stable" functions](#write-type-stable-functions-link)
   - [Avoid containers with abstract type parameters](#avoid-containers-with-abstract-type-parameters-link)
+  - [Separate kernel functions (aka, function barriers)](#separate-kernel-functions-aka-function-barriers-link)
+  - [Anonymous functions get unique types in global scope](#anonymous-functions-get-unique-types-in-global-scope)
 - [Break functions into multiple methods](#break-functions-into-multiple-methods-link)
-- [Separate kernel functions (aka, function barriers)](#separate-kernel-functions-aka-function-barriers-link)
 - [Performance of captured variable](#performance-of-captured-variable-link)
 - [Consider using views for slices (but not always)](#consider-using-views-for-slices-but-not-always-link)
 
@@ -80,6 +81,25 @@ For instance, initialize a vector of real numbers by `x = Float64[]` rather than
 
 Call and/or see [abstract-type.jl](abstract-type.jl).
 
+### Separate kernel functions (aka, function barriers) ([link](https://docs.julialang.org/en/v1/manual/performance-tips/#kernel-functions))
+
+> Many functions follow a pattern of performing some set-up work, and then running many iterations to perform a core computation. Where possible, it is a good idea to put these core computations in separate functions.
+
+The example in [function-barriers.jl](function-barriers.jl) follows this pattern:
+
+- a random type is chosen in the set-up,
+- then core computations are done using this **fixed** (random) type.
+
+Then, we see that it is beneficial to make two functions so that the core computations can specialize to the chosen type.
+
+Call and/or see [function-barriers.jl](function-barriers.jl).
+
+### Anonymous functions get unique types in global scope
+
+Each time you use an anonymous function in global scope, it is assigned a new and unique type. Hence, compilation may be triggered more than necessary.
+
+See [anonymous-functions.jl](anonymous-functions.jl)
+
 ## Break functions into multiple methods ([link](https://docs.julialang.org/en/v1/manual/performance-tips/#Break-functions-into-multiple-definitions))
 
 Julia's writing style is to use multiple method definitions rather than `if` statements devoted to exhaust all possible argument types. For instance, do not write:
@@ -104,19 +124,6 @@ vecormat(A::Matrix) = "matrix"
 ```
 
 The case where `A` is neither a `Vector` or a `Matrix` will throw a `MethodError`.
-
-## Separate kernel functions (aka, function barriers) ([link](https://docs.julialang.org/en/v1/manual/performance-tips/#kernel-functions))
-
-> Many functions follow a pattern of performing some set-up work, and then running many iterations to perform a core computation. Where possible, it is a good idea to put these core computations in separate functions.
-
-The example in [function-barriers.jl](function-barriers.jl) follows this pattern:
-
-- a random type is chosen in the set-up,
-- then core computations are done using this **fixed** (random) type.
-
-Then, we see that it is beneficial to make two functions so that the core computations can specialize to the chosen type.
-
-Call and/or see [function-barriers.jl](function-barriers.jl).
 
 ## Performance of captured variable ([link](https://docs.julialang.org/en/v1/manual/performance-tips/#man-performance-captured))
 
