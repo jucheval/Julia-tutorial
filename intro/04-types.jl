@@ -43,7 +43,7 @@ Vector{Int64}
 Vector
 Matrix
 ## ways to construct Arrays
-[i^2 for i in 1:10]
+[i^2 for i in 1:10 if isodd(i)]
 ones(4)
 zeros(2, 3)
 fill("a", (2, 2, 2))
