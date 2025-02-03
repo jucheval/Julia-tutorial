@@ -58,9 +58,9 @@ methodswith(Irrational)
 # Multiple dispatch
 ## Julia manages methods for all the arguments of a function
 myfunction(x::Int, y::Float64) = "Int first"
-myfunction(x::Int, y::Int) = "Int first and it's a match !"
+myfunction(x::Int, y::Int) = "Int first and it's a match!"
 myfunction(x::Float64, y::Int) = "Float64 first"
-myfunction(x::Float64, y::Float64) = "Float64 first and it's a match"
+myfunction(x::Float64, y::Float64) = "Float64 first and it's a match!"
 myfunction(1, 2.0)
 myfunction(1, 2)
 myfunction(1.0, 2)
