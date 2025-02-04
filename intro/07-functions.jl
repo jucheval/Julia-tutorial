@@ -70,10 +70,12 @@ myfunction(1.0, 2.0)
 (x -> 2 * x)(2)
 
 # map (broadcasting)/reduce/mapreduce
-## map and broadcasting (with the dot syntax, see teh second line below) are used to broadcast functions of type T to Vectors{T}
+## map, broadcasting (with the dot syntax, see the second line below) and comprehension 
+## are used to broadcast functions with argument of type T to Vectors{T}
 ### In other words, Julia executes a for loop without explicitly writing it
-map(myfunction, Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2, 2.0])
-myfunction.(Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2, 2.0])
+map(myfunction, Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2.0, 2])
+myfunction.(Any[1, 1, 1.0, 1.0], Any[2.0, 2, 2.0, 2])
+reshape([myfunction(x, y) for y in Any[2.0, 2], x in Any[1, 1.0]], (4))
 ### note that Any[..] above is an artifact of the example 
 ### it is needed otherwise the Int's are converted into Float's and all the outputs are the same
 ## filter extracts the values matching a certain condition
