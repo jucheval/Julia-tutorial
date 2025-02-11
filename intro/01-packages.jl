@@ -3,7 +3,7 @@
 # Packages names convention
 ## starts with an uppercase letter
 ## usually is quite precise and expressive (avoids abbreviations)
-## ends with ".jl" (for instance look for "DataFrame.jl" on any search engine)
+## ends with ".jl" (for instance look for "DataFrames.jl" on any search engine)
 
 # Adding packages
 ## with the package mode ] -> add PackageName
